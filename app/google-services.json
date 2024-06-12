@@ -7,6 +7,35 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:555313406409:android:4e37031001666966e30818",
+        "android_client_info": {
+          "package_name": "com.universe.audioflare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "555313406409-t05eck684g2kvcc721n27di19obn3ap9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDKf4GkBiw5IO72gopL8tz81BKdP5nrCI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "555313406409-t05eck684g2kvcc721n27di19obn3ap9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:555313406409:android:8daa38286ac936b4e30818",
         "android_client_info": {
           "package_name": "com.universe.audioflare.dev"

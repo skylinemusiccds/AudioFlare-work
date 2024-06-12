@@ -61,20 +61,19 @@ class SpotifyLogInFragment : Fragment() {
         val miniplayer = activity.findViewById<ComposeView>(R.id.miniplayer)
         bottom.visibility = View.GONE
         miniplayer.visibility = View.GONE
+
+        // Manually set the desired sp_dc value here
+        val desiredSpDc = "your_desired_sp_dc_value"
+        viewModel.saveSpotifySpdc(desiredSpDc)
+
         binding.webView.apply {
             webViewClient = object : WebViewClient() {
                 @SuppressLint("FragmentLiveDataObserve")
                 override fun onPageFinished(view: WebView?, url: String?) {
                     if (url == Config.SPOTIFY_ACCOUNT_URL) {
-                        CookieManager.getInstance().getCookie(url)?.let {
-                            viewModel.saveSpotifySpdc(it)
-                        }
                         WebStorage.getInstance().deleteAllData()
-
-                        // Clear all the cookies
                         CookieManager.getInstance().removeAllCookies(null)
                         CookieManager.getInstance().flush()
-
                         binding.webView.clearCache(true)
                         binding.webView.clearFormData()
                         binding.webView.clearHistory()

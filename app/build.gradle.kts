@@ -12,6 +12,9 @@ android {
     namespace = "com.universe.audioflare"
     compileSdk = 34
 
+    lint {
+          baseline = file("lint-baseline.xml")
+      }
     defaultConfig {
         applicationId = "com.universe.audioflare"
         minSdk = 26

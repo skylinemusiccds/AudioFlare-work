@@ -326,11 +326,11 @@ fun HomeTopAppBar(navController: NavController) {
                                 stringResource(R.string.good_morning)
                             }
 
-                            in 13..17 -> {
+                            in 12..16 -> {
                                 stringResource(R.string.good_afternoon)
                             }
 
-                            in 18..23 -> {
+                            in 16..23 -> {
                                 stringResource(R.string.good_evening)
                             }
 

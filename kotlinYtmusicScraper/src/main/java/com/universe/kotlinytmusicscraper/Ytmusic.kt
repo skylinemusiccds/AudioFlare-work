@@ -939,13 +939,16 @@ class Ytmusic {
             )
         }
 
+    val spdc = "AQDIiymM_44CNABF3SBavLZ5QWS5_HKesnS2YtLOl9vjRciQA4xjY-OtFQGs_plcxiE_W-P1fzgHHiPFRma7k98xvHGp77Vaw-OU3k46izejo6cv5HytElmNbc26zR0q-HQw62Sj4clYD2AvMhyHLeAzVb8UWRPi5QGXen6paL4awikVyDZDEp55j6BnSicVDhstS3BBGxQ9I6k_-ORJEphDpO0"
+    val cookieHeader = "sp_dc=$spdc"
+
     suspend fun getSpotifyLyricsToken(spdc: String) =
         spotifyClient.get("https://open.spotify.com/get_access_token?reason=transport&productType=web_player") {
             userAgent(YouTubeClient.WEB.userAgent)
             contentType(ContentType.Application.Json)
-            header("Cookie", "sp_dc=$spdc")
+            header("Cookie", cookieHeader)
         }
-
+    
     suspend fun getSpotifyLyrics(
         token: String,
         trackId: String,

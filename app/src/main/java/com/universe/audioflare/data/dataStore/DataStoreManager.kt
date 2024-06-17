@@ -25,7 +25,7 @@ class DataStoreManager @Inject constructor(private val settingsDataStore: DataSt
     // Location
     val location: Flow<String> =
         settingsDataStore.data.map { preferences ->
-            preferences[LOCATION] ?: "VN"
+            preferences[LOCATION] ?: "IN"
         }
 
     suspend fun setLocation(location: String) {

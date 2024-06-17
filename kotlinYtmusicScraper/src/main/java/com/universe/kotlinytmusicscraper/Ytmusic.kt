@@ -921,8 +921,8 @@ class Ytmusic {
      * Please don't use my client id and client secret for your project. Create your own client id and client secret in Spotify Web API page.
      */
 
-    private val spotify_client_id = "721d6f670f074b1497e74fc59125a6f3"
-    private val spotify_client_secret = "efddc083fa974d39bc6369a892c07ced"
+    private val spotify_client_id = "74e1ad7c9402432a8bad247732cc4d82"
+    private val spotify_client_secret = "8d1512fd3b694c62b79b3a8aec481534"
 
     suspend fun getSpotifyToken() =
         httpClient.post("https://accounts.spotify.com/api/token") {

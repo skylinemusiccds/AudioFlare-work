@@ -45,7 +45,7 @@ class SpotifyLogInFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         // Assign the sp_dc token value
-        spdcToken = "SP_DC_TOKEN_CHANGE_IT_FROM_HERE" // Replace with actual token value
+        spdcToken = "AQCH9LLqr7ToWd-1MK811Sivh9Se2mT7LGwR9fEt2N8juB2FKfWy9v5ZLHrLfNr4_7wm9H4vk1n7qvhasVely5MKRkFTfiZl05h3--MPVltKLsSxyiaV7Enjz53yOjlN61mTufp83AbkGSJf2gOGUMDSBHtO_y4" // Replace with actual token value
 
         // Example of how you might use the token:
         // Save it in settingsViewModel for further use

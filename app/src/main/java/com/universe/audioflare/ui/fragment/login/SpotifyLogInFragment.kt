@@ -30,6 +30,9 @@ class SpotifyLogInFragment : Fragment() {
     private val settingsViewModel by activityViewModels<SettingsViewModel>()
     private val sharedViewModel by activityViewModels<SharedViewModel>()
 
+    // Assuming you have a variable to hold the sp_dc token
+    private lateinit var spdcToken: String
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
@@ -41,20 +44,11 @@ class SpotifyLogInFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Assuming sp_dc token is stored locally in viewModel or settingsViewModel
-        val spdcToken = viewModel.getStoredSpotifySpdc() // Replace with actual method to retrieve token
+        // Assign the sp_dc token value
+        spdcToken = "SP_DC_TOKEN_CHANGE_IT_FROM_HERE" // Replace with actual token value
 
-        if (spdcToken.isNullOrEmpty()) {
-            Toast.makeText(
-                requireContext(),
-                "Spotify login token not found.",
-                Toast.LENGTH_SHORT
-            ).show()
-            findNavController().popBackStack()
-            return
-        }
-
-        // Assuming you want to save the token in settingsViewModel for further use
+        // Example of how you might use the token:
+        // Save it in settingsViewModel for further use
         settingsViewModel.setSpotifySpdcToken(spdcToken)
 
         // Handle login success scenario

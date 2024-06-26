@@ -684,17 +684,24 @@ class SettingsViewModel @Inject constructor(
     private var _spotifyLogIn: MutableStateFlow<Boolean> = MutableStateFlow(false)
     val spotifyLogIn: StateFlow<Boolean> = _spotifyLogIn
 
-    fun getSpotifyLogIn() {
-        viewModelScope.launch {
-            dataStoreManager.spdc.collect { loggedIn ->
-                if (loggedIn.isNotEmpty()) {
-                    _spotifyLogIn.emit(true)
-                } else {
-                    _spotifyLogIn.emit(false)
-                }
-            }
-        }
+   // fun getSpotifyLogIn() {
+     //   viewModelScope.launch {
+ //           dataStoreManager.spdc.collect { loggedIn ->
+   //             if (loggedIn.isNotEmpty()) {
+        //            _spotifyLogIn.emit(true)
+          //      } else {
+              //      _spotifyLogIn.emit(false)
+            //    }
+         //   }
+      //  }
 
+    //}
+    fun getSpotifyLogIn() {
+        val spdc = "AQAuGFPAGxCeOHGuDKDgNfbRZuYMcZFyulOv_jUxeCo_Jg9sk-HU3pShaUPHlioQykt0b0ryncjUvO8x71K5e0w40pvXWvgFZvtuAprXf-ceVxAcxC2d8dEXVmTKnNnbjYfs5Anr6z1-MJT5WBeSRofzZ7X6asMM_nmsXps5N9u8tjJqEss46hPIyQA6RVt1ubjRdKQ6YBkci7BQMHuc9SuNCBDb" // Your locally assigned SPDC value
+
+        viewModelScope.launch {
+            _spotifyLogIn.emit(spdc.isNotEmpty()) // Emit true if SPDC is not empty, false otherwise
+        }
     }
 
     fun setSpotifyLogIn(loggedIn: Boolean) {
